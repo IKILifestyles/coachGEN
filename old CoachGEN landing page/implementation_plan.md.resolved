@@ -1,0 +1,68 @@
+# Khởi tạo dự án CoachGEN Landing Page
+
+Dự án này là một landing page hiện đại cho thương hiệu CoachGEN, sử dụng React (thông qua Vite), và CSS thuần (Vanilla CSS) với cấu trúc thiết kế ưu tiên sự tối giản, cảm giác công nghệ và phát triển con người.
+
+## Các yếu tố thiết kế chính
+
+*   **Màu sắc**: Xanh TRUST (`#1E4E8C`), Xanh Tuệ Vấn (`#2FB7C8`), Tím Tuệ Vấn (`#8A4AB7`), và các màu xám/trắng làm nền/không gian.
+*   **Fonts**: Inter, Roboto, Source Sans Pro.
+*   **Icon**: Line icon, minimal (sử dụng thư viện phổ biến như `lucide-react`).
+*   **Effects**: Hover glow nhẹ, animation xoay chậm (ví dụ cho 3D DNA placeholder), scroll reveal (xuất hiện khi cuộn), gradient glow.
+
+## Proposed Changes
+
+### Dự án mới: Khởi tạo và Cấu hình
+
+#### [NEW] `d:/Workspace/CoachGEN/package.json`
+Tạo dự án Vite với React: `npx -y create-vite@latest . --template react`.
+Cài đặt thêm các package cần thiết như `lucide-react` cho icons: `npm install lucide-react`.
+
+### Component Cấu Trúc
+
+#### [NEW] `src/index.css`
+Định nghĩa các biến màu sắc (CSS variables), font chữ toàn cục, reset CSS, các lớp nền gradient, các lớp animation (như `.fade-in`, `.slide-up`, `.glow-effect`).
+
+#### [NEW] `src/App.jsx`
+Main layout, tổng hợp toàn bộ các section lại với nhau và chứa Navbar cố định ở trên.
+
+#### [NEW] `src/components/Navbar.jsx`
+Header với logo CoachGEN, menu hamburger cho mobile, và các luồng điều hướng tới các phần tương ứng trong trang.
+
+#### [NEW] `src/components/Hero.jsx`
+Chiếm toàn màn hình, sử dụng video/hình background placeholder dạng DNA helix/chấm sáng. Bao gồm tiêu đề lớn, slogan, và 2 nút CTA (Khám phá, Đăng ký).
+
+#### [NEW] `src/components/Philosophy.jsx`
+Section thứ 2: 3 cột grid hiển thị 3 triết lý (DNA Potential, Gen Dev, Coaching Trans).
+
+#### [NEW] `src/components/Framework.jsx`
+Section thứ 3: Concept DNA phân tách 4 trụ cột (Discover, Develop, Lead, Multiply).
+
+#### [NEW] `src/components/Services.jsx`
+Section thứ 4: Grid 4 ô dịch vụ coaching, mỗi ô có icon, text và nút "Tìm hiểu thêm".
+
+#### [NEW] `src/components/Journey.jsx`
+Section thứ 5: Horizontal Timeline trải qua 4 bước (Assessment -> Coaching -> Transform -> Legacy).
+
+#### [NEW] `src/components/Audience.jsx`
+Section thứ 6: Đối tượng mục tiêu (Leaders, Managers, Young Talents).
+
+#### [NEW] `src/components/ContactForm.jsx`
+Section thứ 7: Form nhập liệu đơn giản, chức năng gửi mock với `alert`.
+
+#### [NEW] `src/components/Quote.jsx`
+Section thứ 8: Quote truyền cảm hứng trên nền bg gradient Xanh Tím.
+
+#### [NEW] `src/components/Footer.jsx`
+Khối thông tin liên hệ, social link và menu, copyright.
+
+## Verification Plan
+
+### Automated Tests
+1. **Kiểm tra Giao diện (Browser Automation)**:
+   Sử dụng browser tool để mở trang sau khi build và chạy dev server, đảm bảo không có lỗi ở console, chụp ảnh fullscreen các layout trên Desktop (1920x1080) và Mobile (375x812).
+2. **Quay Video Thực Tế**:
+   Browser subagent cuộn từ trên xuống dưới trên giao diện Desktop và Mobile để xem các hiệu ứng animation và responsive đã hoạt động mượt mà chưa.
+
+### Manual Verification
+*   Người dùng mở thư mục `d:/Workspace/CoachGEN` trên máy mình, chạy `npm run dev` và trỏ trình duyệt vào `localhost:5173`.
+*   Kiểm tra việc bấm đăng ký trong Form có văng ra alert "CoachGEN đã nhận thông tin của bạn." hay không.
